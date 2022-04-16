@@ -3,9 +3,9 @@
     <div class="container">
         <input id="responsive-menu" type="checkbox" v-model="showNavbar">
         <label for="responsive-menu">
-            <span  class="dev-name">Arif Mehniyar</span>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAEkklEQVRIibWWf0xbVRTHz/vRvv6g/CoTKQNqqA4QJlsZg82FDprBGCYsjOwPF40u6tyiMhM1IpsvMJY4TVxiGEMjWcj8Y9PonNK5gYxMYGAL8mPjh0yZLXQEGLSUtq/t67v+YcC1tPwqO8n94573vedzzr335D4AP6ZTqSIQAObve6DmM3BHXl4xQRBVCKF+ZnZ2/66WlpnHCr6pUpHBEkmVKDj4QOyWLeE2k8mt7+kZdzLMwcyGhtbHAm5Rq2Mpivo5SqGIl8rlonk/63TCfZ1uymG1nldqNCcxALRuYG1ubhFBUV/I09KihBLJYhVCMD48bJ7S63tcLLt/x/Xr04GCyaqDJS+yU3cuusRCtr93kF1CKyYQ9vy0KOIOAMgCBjc8nTPWn/WKSf5UXOhKFnR0dJrhh28C5QLpy2m12sBkNtn5PD5fKg0ncBwPGLQs2Gh8YDGMGrocTtfnPJy3Sa83vPtcakokSfjMcc3mUQrrdsPo6KgxGbVl/1S578fvK/acsTHM6/p/DKZ1pXqDGZsdMEDtNE1zC06n86bFYmHWG+yxfwKREBBgGTRN4/NwnC/IkUgkgnmNCEzyulMF/QAACAPjLMMcf6uisS8gMEkQsDE6Ovru2M6mFz7UnCUpLIHi8Uti42IWbjyBA1mUn5kIAGCx2hMbbvVqqmhV4jG6eW7NYAAAWbQsKCQsNMtkMqXzeTxKKpXi/m61RCyEGJlUOPinNQUAbgcEBgAQi0QgFomEKwmA4xiBCIxaDRQAgFS42+IfTliDB6busW4ErB1CR7xFBOYUCdBcDIbhXAgywLeatof7diulIiEFOIYRGCJCVgvGqsvUqiRF7JW0zfEh39W3Dr18QpPgLfLW2Bk4JA0X1u9VbX3CzjhA09Q1MmF2prz32Q3riit+dOLmEHWuVN3sLUIIhU6b5/jz8yOVGl1tef6XfYP339mcKJdsS1Vs1HYP1wFA0ZrABI45jp5uVHmLqsvUqvCQoCsAsHDuei79Y/xvbZ7syTBlXPQGnn5scnctnXfoVfqXi6sGcxzwqkrVtLcIuZHcamM8tDRNc9UfZRf+1jHQWaDeFpmpTAi72vD7pzUfqG+98Umjfjkw7jVz4zg0ew/AsW4+j+S8F79Z2TTmcLrfbtUOsCSBQ1ZGUiRfTF29XFxMrA68BjtMay4/mJwxjRgmnNLQYCwxXqaYe9a6aNeWBnNAcByovAdwKNXpYv0m6XCyg7q+e0arjYHkBLlYIhEcqTmxZ/tSYI9zw3FwHTvduCjb6jK1SiwSFPoLggG4bQ7Xgebbd6/lZys3qDKSIzRNuktfv78z5fCZVsuy4JW2ky87WnGjs7Y8v+b/FntGpu0evgB+WmzN7eTLVtNi61YxwKMtNqQtUCujMrZuCqv/VXe27lRBKYDnM7quFQP812Jfndx7vL1r6Nyu9KTwwtztUgCQAng+oyQAwPjkDOh6/zJzCNz+Aq5EM2+vlV+7dKE8v7j9j6EcAcX36H8eDw8i5ogUkiHZ7mmzpXDabAGOw3z+Wy2nQYCVePscHPHS0Ihxh8/MkGDwX2r0IYqCOyDcAAAAAElFTkSuQmCC"/>
-
+            <a href="javascript:void(0)" @click="goHome">
+                <img height="36" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAEkklEQVRIibWWf0xbVRTHz/vRvv6g/CoTKQNqqA4QJlsZg82FDprBGCYsjOwPF40u6tyiMhM1IpsvMJY4TVxiGEMjWcj8Y9PonNK5gYxMYGAL8mPjh0yZLXQEGLSUtq/t67v+YcC1tPwqO8n94573vedzzr335D4AP6ZTqSIQAObve6DmM3BHXl4xQRBVCKF+ZnZ2/66WlpnHCr6pUpHBEkmVKDj4QOyWLeE2k8mt7+kZdzLMwcyGhtbHAm5Rq2Mpivo5SqGIl8rlonk/63TCfZ1uymG1nldqNCcxALRuYG1ubhFBUV/I09KihBLJYhVCMD48bJ7S63tcLLt/x/Xr04GCyaqDJS+yU3cuusRCtr93kF1CKyYQ9vy0KOIOAMgCBjc8nTPWn/WKSf5UXOhKFnR0dJrhh28C5QLpy2m12sBkNtn5PD5fKg0ncBwPGLQs2Gh8YDGMGrocTtfnPJy3Sa83vPtcakokSfjMcc3mUQrrdsPo6KgxGbVl/1S578fvK/acsTHM6/p/DKZ1pXqDGZsdMEDtNE1zC06n86bFYmHWG+yxfwKREBBgGTRN4/NwnC/IkUgkgnmNCEzyulMF/QAACAPjLMMcf6uisS8gMEkQsDE6Ovru2M6mFz7UnCUpLIHi8Uti42IWbjyBA1mUn5kIAGCx2hMbbvVqqmhV4jG6eW7NYAAAWbQsKCQsNMtkMqXzeTxKKpXi/m61RCyEGJlUOPinNQUAbgcEBgAQi0QgFomEKwmA4xiBCIxaDRQAgFS42+IfTliDB6busW4ErB1CR7xFBOYUCdBcDIbhXAgywLeatof7diulIiEFOIYRGCJCVgvGqsvUqiRF7JW0zfEh39W3Dr18QpPgLfLW2Bk4JA0X1u9VbX3CzjhA09Q1MmF2prz32Q3riit+dOLmEHWuVN3sLUIIhU6b5/jz8yOVGl1tef6XfYP339mcKJdsS1Vs1HYP1wFA0ZrABI45jp5uVHmLqsvUqvCQoCsAsHDuei79Y/xvbZ7syTBlXPQGnn5scnctnXfoVfqXi6sGcxzwqkrVtLcIuZHcamM8tDRNc9UfZRf+1jHQWaDeFpmpTAi72vD7pzUfqG+98Umjfjkw7jVz4zg0ew/AsW4+j+S8F79Z2TTmcLrfbtUOsCSBQ1ZGUiRfTF29XFxMrA68BjtMay4/mJwxjRgmnNLQYCwxXqaYe9a6aNeWBnNAcByovAdwKNXpYv0m6XCyg7q+e0arjYHkBLlYIhEcqTmxZ/tSYI9zw3FwHTvduCjb6jK1SiwSFPoLggG4bQ7Xgebbd6/lZys3qDKSIzRNuktfv78z5fCZVsuy4JW2ky87WnGjs7Y8v+b/FntGpu0evgB+WmzN7eTLVtNi61YxwKMtNqQtUCujMrZuCqv/VXe27lRBKYDnM7quFQP812Jfndx7vL1r6Nyu9KTwwtztUgCQAng+oyQAwPjkDOh6/zJzCNz+Aq5EM2+vlV+7dKE8v7j9j6EcAcX36H8eDw8i5ogUkiHZ7mmzpXDabAGOw3z+Wy2nQYCVePscHPHS0Ihxh8/MkGDwX2r0IYqCOyDcAAAAAElFTkSuQmCC"/>
+            </a>
             <span id="menu-icon"></span></label>
         <div id="overlay"></div>
         <ul>
@@ -91,7 +91,7 @@
             <li>
                 <a href="https://github.com/mehniyarif" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                         width="48" height="48"
+                         width="36" height="36"
                          viewBox="0 0 64 64"
                          style=" fill:#000000;"><path d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z"></path></svg>
                   </a>
@@ -99,7 +99,7 @@
             <li>
                 <a href="https://codepen.io/mehniyar" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                         width="48" height="48"
+                         width="36" height="36"
                          viewBox="0 0 50 50"
                          style=" fill:#000000;"><path d="M 25 4 L 4 17.34375 L 4 32.652344 L 25 46 L 46 32.65625 L 46 17.34375 Z M 25 29.183594 L 19.066406 25.070313 L 25 21.023438 L 30.933594 25.070313 Z M 27 17.605469 L 27 9.949219 L 40.429688 18.484375 L 34.410156 22.65625 Z M 23 17.605469 L 15.589844 22.65625 L 9.570313 18.484375 L 23 9.949219 Z M 12.09375 25.042969 L 8 27.832031 L 8 22.203125 Z M 15.570313 27.453125 L 23 32.605469 L 23 40.050781 L 9.589844 31.527344 Z M 27 32.605469 L 34.429688 27.453125 L 40.410156 31.527344 L 27 40.050781 Z M 37.90625 25.042969 L 42 22.203125 L 42 27.832031 Z"></path></svg>
                 </a>
@@ -107,7 +107,7 @@
             <li>
                 <a href="https://twitter.com/mehniyarif" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                         width="48" height="48"
+                         width="36" height="36"
                          viewBox="0 0 48 48"
                          style=" fill:#000000;"><linearGradient id="_osn9zIN2f6RhTsY8WhY4a_5MQ0gPAYYx7a_gr1" x1="10.341" x2="40.798" y1="8.312" y2="38.769" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2aa4f4"></stop><stop offset="1" stop-color="#007ad9"></stop></linearGradient><path fill="url(#_osn9zIN2f6RhTsY8WhY4a_5MQ0gPAYYx7a_gr1)" d="M46.105,11.02c-1.551,0.687-3.219,1.145-4.979,1.362c1.789-1.062,3.166-2.756,3.812-4.758	c-1.674,0.981-3.529,1.702-5.502,2.082C37.86,8.036,35.612,7,33.122,7c-4.783,0-8.661,3.843-8.661,8.582	c0,0.671,0.079,1.324,0.226,1.958c-7.196-0.361-13.579-3.782-17.849-8.974c-0.75,1.269-1.172,2.754-1.172,4.322	c0,2.979,1.525,5.602,3.851,7.147c-1.42-0.043-2.756-0.438-3.926-1.072c0,0.026,0,0.064,0,0.101c0,4.163,2.986,7.63,6.944,8.419	c-0.723,0.198-1.488,0.308-2.276,0.308c-0.559,0-1.104-0.063-1.632-0.158c1.102,3.402,4.299,5.889,8.087,5.963	c-2.964,2.298-6.697,3.674-10.756,3.674c-0.701,0-1.387-0.04-2.065-0.122C7.73,39.577,12.283,41,17.171,41	c15.927,0,24.641-13.079,24.641-24.426c0-0.372-0.012-0.742-0.029-1.108C43.483,14.265,44.948,12.751,46.105,11.02"></path></svg>
                 </a>
@@ -115,7 +115,7 @@
             <li>
                 <a href="https://www.linkedin.com/in/mehniyarif/" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                         width="48" height="48"
+                         width="36" height="36"
                          viewBox="0 0 48 48"
                          style=" fill:#000000;"><path fill="#0288D1" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path><path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"></path></svg>
                 </a>
@@ -134,6 +134,10 @@ export default {
         }
     },
     methods:{
+        goHome(){
+            this.showNavbar = false
+            this.$router.push('/').catch(() => {})
+        },
         close(){
             this.showNavbar = false
         }
