@@ -6,6 +6,7 @@
             <a href="javascript:void(0)" @click="goHome">
                 <img height="36" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAEkklEQVRIibWWf0xbVRTHz/vRvv6g/CoTKQNqqA4QJlsZg82FDprBGCYsjOwPF40u6tyiMhM1IpsvMJY4TVxiGEMjWcj8Y9PonNK5gYxMYGAL8mPjh0yZLXQEGLSUtq/t67v+YcC1tPwqO8n94573vedzzr335D4AP6ZTqSIQAObve6DmM3BHXl4xQRBVCKF+ZnZ2/66WlpnHCr6pUpHBEkmVKDj4QOyWLeE2k8mt7+kZdzLMwcyGhtbHAm5Rq2Mpivo5SqGIl8rlonk/63TCfZ1uymG1nldqNCcxALRuYG1ubhFBUV/I09KihBLJYhVCMD48bJ7S63tcLLt/x/Xr04GCyaqDJS+yU3cuusRCtr93kF1CKyYQ9vy0KOIOAMgCBjc8nTPWn/WKSf5UXOhKFnR0dJrhh28C5QLpy2m12sBkNtn5PD5fKg0ncBwPGLQs2Gh8YDGMGrocTtfnPJy3Sa83vPtcakokSfjMcc3mUQrrdsPo6KgxGbVl/1S578fvK/acsTHM6/p/DKZ1pXqDGZsdMEDtNE1zC06n86bFYmHWG+yxfwKREBBgGTRN4/NwnC/IkUgkgnmNCEzyulMF/QAACAPjLMMcf6uisS8gMEkQsDE6Ovru2M6mFz7UnCUpLIHi8Uti42IWbjyBA1mUn5kIAGCx2hMbbvVqqmhV4jG6eW7NYAAAWbQsKCQsNMtkMqXzeTxKKpXi/m61RCyEGJlUOPinNQUAbgcEBgAQi0QgFomEKwmA4xiBCIxaDRQAgFS42+IfTliDB6busW4ErB1CR7xFBOYUCdBcDIbhXAgywLeatof7diulIiEFOIYRGCJCVgvGqsvUqiRF7JW0zfEh39W3Dr18QpPgLfLW2Bk4JA0X1u9VbX3CzjhA09Q1MmF2prz32Q3riit+dOLmEHWuVN3sLUIIhU6b5/jz8yOVGl1tef6XfYP339mcKJdsS1Vs1HYP1wFA0ZrABI45jp5uVHmLqsvUqvCQoCsAsHDuei79Y/xvbZ7syTBlXPQGnn5scnctnXfoVfqXi6sGcxzwqkrVtLcIuZHcamM8tDRNc9UfZRf+1jHQWaDeFpmpTAi72vD7pzUfqG+98Umjfjkw7jVz4zg0ew/AsW4+j+S8F79Z2TTmcLrfbtUOsCSBQ1ZGUiRfTF29XFxMrA68BjtMay4/mJwxjRgmnNLQYCwxXqaYe9a6aNeWBnNAcByovAdwKNXpYv0m6XCyg7q+e0arjYHkBLlYIhEcqTmxZ/tSYI9zw3FwHTvduCjb6jK1SiwSFPoLggG4bQ7Xgebbd6/lZys3qDKSIzRNuktfv78z5fCZVsuy4JW2ky87WnGjs7Y8v+b/FntGpu0evgB+WmzN7eTLVtNi61YxwKMtNqQtUCujMrZuCqv/VXe27lRBKYDnM7quFQP812Jfndx7vL1r6Nyu9KTwwtztUgCQAng+oyQAwPjkDOh6/zJzCNz+Aq5EM2+vlV+7dKE8v7j9j6EcAcX36H8eDw8i5ogUkiHZ7mmzpXDabAGOw3z+Wy2nQYCVePscHPHS0Ihxh8/MkGDwX2r0IYqCOyDcAAAAAElFTkSuQmCC"/>
             </a>
+            <span class="dev-name">my playground</span>
             <span id="menu-icon"></span></label>
         <div id="overlay"></div>
         <ul>
@@ -147,7 +148,7 @@ export default {
 
 <style lang="scss" scoped>
 nav {
-  background-color: #F7F9F9;
+  background-color: rgb(191,237,255);
   box-shadow: 0 3px 5px rgba(0,0,0,.1);
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   color: #343A40;
@@ -170,10 +171,10 @@ nav label {
   cursor: pointer;
   display: block;
   font: 2em/1 'Oswald', sans-serif;
-  padding: 0.5em;
+  padding: 0.4em;
 }
 .dev-name{
-  font-size: .8em;
+  font-size: .5em;
   padding-right: 10px;
   color: #4d5864;
 }
@@ -218,6 +219,10 @@ nav label #menu-icon {
 /* Close Icon */
 nav input[type=checkbox]:checked + label #menu-icon {
   background: transparent;
+}
+
+nav:has(input[type=checkbox]:checked) {
+  background-color: #F7F9F9;
 }
 
 nav input[type=checkbox]:checked + label #menu-icon:before {

@@ -13,7 +13,8 @@ export default {
 </script>
 <style lang="scss">
 body{
-  background-color: #F8F8F8;
+  background: rgb(191,237,255);
+  background: radial-gradient(circle, rgba(191,237,255,0.3669879356127107) 0%, rgba(255,255,255,1) 52%, rgba(248,248,248,1) 100%);
   scrollbar-width: thin;
   scrollbar-color: #ccc;
 
@@ -29,6 +30,7 @@ body{
   &::-webkit-scrollbar-thumb:hover {
     background: #ddd;
   }
+
 }
 @import "./assets/css/reboot.scss";
 </style>
