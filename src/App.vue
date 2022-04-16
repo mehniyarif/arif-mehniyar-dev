@@ -1,32 +1,34 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+      <navbar></navbar>
+      <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Navbar from "@/components/navbar"
+export default {
+    components: {Navbar}
 }
+</script>
+<style lang="scss">
+body{
+  background-color: #F8F8F8;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc;
 
-nav {
-  padding: 30px;
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #ddd;
   }
 }
+@import "./assets/css/reboot.scss";
 </style>
