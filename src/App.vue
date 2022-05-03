@@ -2,13 +2,29 @@
   <div id="app">
       <navbar></navbar>
       <router-view/>
+      <download-resume @click="downloadResume"></download-resume>
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/navbar"
+import DownloadResume from "@/components/download-resume";
 export default {
-    components: {Navbar}
+    components: {Navbar,DownloadResume},
+    methods:{
+        downloadResume(){
+            let copyDocument = window.document
+            copyDocument.querySelector(".up-container").style.height = "100%"
+            copyDocument.querySelector("#site-navbar").style.visibility = "hidden"
+            copyDocument.querySelector(".download-container").style.visibility = "hidden"
+            copyDocument.querySelector(".scroll-down").style.visibility = "hidden"
+            window.print()
+            copyDocument.querySelector(".up-container").style.height = "100vh"
+            copyDocument.querySelector("#site-navbar").style.visibility = "visible"
+            copyDocument.querySelector(".download-container").style.visibility = "visible"
+            copyDocument.querySelector(".scroll-down").style.visibility = "visible"
+        }
+    }
 }
 </script>
 <style lang="scss">

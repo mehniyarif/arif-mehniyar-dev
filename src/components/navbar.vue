@@ -1,5 +1,5 @@
 <template>
-<nav>
+<nav id="site-navbar">
     <div class="container">
         <input id="responsive-menu" type="checkbox" v-model="showNavbar">
         <label for="responsive-menu">
