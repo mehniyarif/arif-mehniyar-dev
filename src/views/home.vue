@@ -66,8 +66,10 @@ export default {
 }
 .image-container{
   font-family: 'Open Sans', sans-serif;
-  display: grid;
-  place-content: center;
+  display: block;
+  text-align: center;
+  max-width: 20em;
+  margin: auto;
 }
 .profile-name{
   font-size: 2em;
@@ -75,17 +77,26 @@ export default {
 }
 .profile-picture{
     border-radius: 50%;
+    text-align: center;
+    height: 17em;
+    width: 17em;
+    margin: 2px;
+    border: .2em solid #F7F9F9;
+
+
+  @media (min-width:768px){
     height: 20em;
     width: 20em;
     margin: 10px;
-    border: .5em solid #F7F9F9;
+  }
+
     &:hover{
       transform: translate(1px, 1px);
       box-shadow: 1em 2em 4em rgba(0,0,0,.1);
      }
 }
 .branches{
-  text-align: center;
+  margin: auto;
   img{
     height: 2.5em;
     cursor: pointer;
@@ -93,7 +104,6 @@ export default {
 }
 .title-branches{
   text-align: center;
-  width: 20em;
   padding-top: 10px;
   height: 1.8em;
 }
