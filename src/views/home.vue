@@ -20,6 +20,18 @@
                   <span>Full Stack  Developer</span>
               </figcaption>
       </figure>
+      <p class="description-paragraph first">
+          <span><img height="40" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEzUlEQVRoge1YXW8bRRQ9d9frxknsxKYkhgQS54FCQRVRo9hOQnksqlB/AEJ8SaBKSE7TNqVN4mRoKqACpVQC8UJpQZQHxEMFRe0bD5VwxYdUECKiLQhI2xhK4jhRnPpjd3iwLDnxzuz6oxISPm+7586998zMzhwbqKOOOuqo4/8MKn549dLRC+DYKQr+7eICbl5eMeVUTeFtj7ge/Wj0xI+ygs+8Obzt75/WLutZg8z4zu0t6B7wihNwfDk1MPFk4VFZzyn7AGRFY7uCXjibVFNOzxp0e8H4VNY8AKz9o58VNe9sVHFfX4tseEYx+P7iF+sEsNDYzxx4TzRadSq4PyiencTc2pZnj408L+Kfe2Pfi0vX0wER3z3ohepURDQ48HZ0KPpL8buS6E05lQG4JUri39oMd5tTWCF5M32CMVaSl33FHIkbt4+Dc9OhHn8D7t7SJGwewF8NmuO1jS9LCh1+7HCCiCaEaQgIPO4DkekuwOqtjPtXR/Ldje+vXVw6mVrImHdIQM8OrzAnABCng4f6DiUtBQCAEcy+D9C3omQefwM2P9AoLLb4e+qlPTMjHYXnPTMjHYk/154Wxbc/6EZz+yZhPoC+N8LZj80YUwGMmME53wvAfL0BdA/6oGrmM5ZJ6crSov5Z4TmxYHyeSemmtVRNQVe4VdI8DIL+MiNmmJHiNQPAYtNnCPSUiJ/7Lok/YglTjlTCPb2tOx061+Z+SJ7jhvlcBIZ86Oj1yNo4NRWeeEFEij95ACD9FQCrIrqj1wNXi8OU4zrH6o3Uh4n51GlR865WDfduc8s6WOZqbkwWIBXAQuw6QK8LB6uE7iGfcHxyPu1fiWc2i/ieHT6QKtkEREdYP4vLepSvAABvwv0WgKsi/q6eRni7XFZpSuALWI675l10v2OVx1JAZFckzTk/KIsJDPmgKNLPaR1IJQQGJXYhHxWJ7IqkrXJZCgAANhA9S8AFEd/o0+CX7+V16Oz1wOXVhDwB56bC4+ft5LIlIJ+UW/ikVqFPKoazSUXndrnfMRRlvyygGLYFRMPRWU4ouWELyPsk6XkOAOgekPsdgB9nwbErdvuyLSCP3BQA4ang3yq/Ue34HU56id+RoSwBLMSWAT4pDJB5Ght+B4TRfA37KHMFAB7ST1r5JLNZbn+o2cLv4NJkcNzU78hQtgBGzCCDhiHzSRv2uepU0BWSHpsG5xgmImFOEcoWAACTg2MxAJ+I+I0njdUJxQmn2cDEN5X0UpEAAOBq7gAA4X4tnPU27ogVzSH5/WGBigWwfhYn4JiIz9+2PstbmgA23jc+X2kfFQsAAMOTk/okX8Bl5XeutiY8wrvFDqoSwB5mGRBGK89Aw3b8jjRDNYMLOBI7ep4DT5Q57Iup8MTuamtXtQIFWPkkE2S4ohyoRe2aCIiGo7MAWXr3AjjHTDl+R4aaCAAATlkGiU8qQhxKTvgrr1zUTAALsWUCRa3iiKhsvyNDzQQAgBHKfgBAfKMSj0WDY2dqWbOmAvI+SRH9n2Rwg/ZW4ndkqKkAIO+TOLjZLJ+q1O/IUHMBAABVH8V6n7Ts0Ky/j0pwRwSwfhYnQtFJw6vyOzLcmRUAYLhzMwCuAJj1a22274j/FFhsejf7erpci1FHHXWUgX8BcmVo3cljsxQAAAAASUVORK5CYII="/></span>
+          I love Vue. I really enjoy create new vue components and  <a target="_blank" href="https://www.npmjs.com/~mehniyarif">publish on NPM.</a> The HTML 5 Elements come us with some lacks, I uses some css styles and magic javascript lines, ta daa! these lacks convert to tremendous vue components.
+          I mostly using slots, emits, props, reactivity, filters, directives while writing Vue
+
+      </p>
+      <p class="description-paragraph">
+          I Usually add Vuex while creating projects. After creating a method in actions vuex offer us and pulling my data, I first write it to the state with the help mutations. Then I use it with the help of getters methods. By the way I'm using Axios package to fetch the data
+      </p>
+      <p class="description-paragraph">
+          I create my own css codes as much as possible and use the sass framework for this. It can be easily used with the help of sass pre-processors. Apart from these, the main features I use in Vue are Router, Class Based Services, ES6 Features, PWA, MVC standards and etc.
+      </p>
   </div>
 </template>
 
@@ -32,8 +44,12 @@ export default {
 }
 </script>
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200&display=swap');
+.home{
+  display: block;
+}
 .image-container{
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
   font-family: 'Open Sans', sans-serif;
   display: grid;
   place-content: center;
@@ -65,5 +81,16 @@ export default {
   width: 20em;
   padding-top: 10px;
   height: 1.8em;
+}
+.description-paragraph{
+  font-family: 'Nunito', sans-serif;
+  margin-inline: 10%;
+  font-weight: 500;
+  span{
+    margin-right: 20px;
+  }
+  &.first{
+    margin-top: 100px;
+  }
 }
 </style>
