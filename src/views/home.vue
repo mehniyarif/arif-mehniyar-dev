@@ -37,13 +37,18 @@
               I create my own css codes as much as possible and use the sass framework for this. It can be easily used with the help of sass pre-processors. Apart from these, the main features I use in Vue are Router, Class Based Services, ES6 Features, PWA, MVC standards and etc.
           </p>
       </div>
+      <div class="down-container">
+          <social-media></social-media>
+      </div>
   </div>
 </template>
 
 <script>
-
+import SocialMedia from "@/components/social-media";
 export default {
     name: 'HomeView',
+    components: {SocialMedia},
+
     methods:{
         scrollDown(){
             let currentElement = document.querySelector(".resume")
@@ -129,7 +134,6 @@ export default {
   font-size: 20px;
   z-index: 0;
   text-decoration: none;
-  text-shadow: 0;
   width: 13px;
   height: 13px;
   cursor: pointer;
@@ -150,5 +154,9 @@ export default {
     transform: translate(0, 20px) rotate(45deg);
     opacity: 0;
   }
+}
+.down-container{
+  display: flex;
+  justify-content: center;
 }
 </style>

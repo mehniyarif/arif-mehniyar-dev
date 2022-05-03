@@ -19,10 +19,12 @@ export default {
             copyDocument.querySelector(".download-container").style.display = "none"
             copyDocument.querySelector(".scroll-down").style.display = "none"
             window.print()
-            copyDocument.querySelector(".up-container").style.height = "100vh"
-            copyDocument.querySelector("#site-navbar").style.display = "inherit"
-            copyDocument.querySelector(".download-container").style.display = "flex"
-            copyDocument.querySelector(".scroll-down").style.display = "flex"
+            setTimeout(()=>{
+                copyDocument.querySelector(".up-container").style.height = "100vh"
+                copyDocument.querySelector("#site-navbar").style.display = "inherit"
+                copyDocument.querySelector(".download-container").style.display = "flex"
+                copyDocument.querySelector(".scroll-down").style.display = "flex"
+            })
         }
     }
 }
