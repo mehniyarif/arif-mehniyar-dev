@@ -15,14 +15,14 @@ export default {
         downloadResume(){
             let copyDocument = window.document
             copyDocument.querySelector(".up-container").style.height = "100%"
-            copyDocument.querySelector("#site-navbar").style.visibility = "hidden"
-            copyDocument.querySelector(".download-container").style.visibility = "hidden"
-            copyDocument.querySelector(".scroll-down").style.visibility = "hidden"
+            copyDocument.querySelector("#site-navbar").style.display = "none"
+            copyDocument.querySelector(".download-container").style.display = "none"
+            copyDocument.querySelector(".scroll-down").style.display = "none"
             window.print()
             copyDocument.querySelector(".up-container").style.height = "100vh"
-            copyDocument.querySelector("#site-navbar").style.visibility = "visible"
-            copyDocument.querySelector(".download-container").style.visibility = "visible"
-            copyDocument.querySelector(".scroll-down").style.visibility = "visible"
+            copyDocument.querySelector("#site-navbar").style.display = "inherit"
+            copyDocument.querySelector(".download-container").style.display = "flex"
+            copyDocument.querySelector(".scroll-down").style.display = "flex"
         }
     }
 }

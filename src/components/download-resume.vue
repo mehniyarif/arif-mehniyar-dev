@@ -1,7 +1,6 @@
 <template>
     <div class='download-container'>
-          <span class='btn' @click="downloadResume">Download Resume
-          </span>
+          <span class='btn' @click="downloadResume">Download Resume</span>
     </div>
 </template>
 

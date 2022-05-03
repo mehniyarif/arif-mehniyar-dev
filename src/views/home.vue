@@ -132,6 +132,7 @@ export default {
   text-shadow: 0;
   width: 13px;
   height: 13px;
+  cursor: pointer;
   border-bottom: 2px solid #2B5388;
   border-right: 2px solid #2B5388;
   -webkit-transform: translate(-50%, 0) rotate(45deg);
