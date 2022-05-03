@@ -1,4 +1,8 @@
 const { defineConfig } = require('@vue/cli-service')
+import {precacheAndRoute} from 'workbox-precaching';
+
+precacheAndRoute(self.__WB_MANIFEST);
+
 module.exports = defineConfig({
   transpileDependencies: true,
   pwa: {
