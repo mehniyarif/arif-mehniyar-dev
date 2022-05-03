@@ -85,6 +85,7 @@ export default {
 .description-paragraph{
   font-family: 'Nunito', sans-serif;
   margin-inline: 10%;
+  font-size: 1.1em;
   font-weight: 500;
   span{
     margin-right: 20px;
