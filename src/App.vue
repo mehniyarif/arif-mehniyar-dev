@@ -24,7 +24,7 @@ export default {
                 copyDocument.querySelector("#site-navbar").style.display = "inherit"
                 copyDocument.querySelector(".download-container").style.display = "flex"
                 copyDocument.querySelector(".scroll-down").style.display = "flex"
-            })
+            },2000)
         }
     }
 }
