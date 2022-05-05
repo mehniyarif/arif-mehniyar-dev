@@ -52,6 +52,11 @@ const routes = [
     path: '/work-areas',
     name: 'Areas I Want To Work',
     component: () => import(/* webpackChunkName: "about" */ '../views/work-areas.vue')
+  },
+  {
+    path: '/terminal',
+    name: 'Terminal',
+    component: () => import(/* webpackChunkName: "about" */ '../views/terminal.vue')
   }
 ]
 
