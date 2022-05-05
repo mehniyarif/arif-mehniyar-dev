@@ -56,7 +56,7 @@ const routes = [
   {
     path: '/terminal',
     name: 'Terminal',
-    component: () => import(/* webpackChunkName: "about" */ '../views/terminal.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/terminal')
   }
 ]
 
