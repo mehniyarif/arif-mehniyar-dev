@@ -1,13 +1,6 @@
 <template>
     <div>
         <section class="window window--maximized" ref="window" @click="focus">
-            <header class="window-header">
-                <nav class="window-controls">
-                    <span @click="minimize" class="control-item control-minimize js-minimize">‒</span>
-                    <span @click="maximize" class="control-item control-maximize js-maximize">□</span>
-                    <span @click="close" class="control-item control-close js-close">&times;</span>
-                </nav>
-            </header>
             <main class="window-content" >
                 <template v-for="(line, key) in history">
                     <div :key="key" class="window-cursor" v-if="line.success">
@@ -204,13 +197,9 @@ export default {
 <style lang="scss" scoped>
 .window {
     width: 450px;
-    min-height: 250px;
-    height: max-content;
-    max-height: 70vh;
+    height: 100vh;
     padding-bottom: 70px;
     background-color: rgba(37, 37, 37, 0.85);
-    border: 1px solid #c9c9c9;
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
     transition: all ease-in-out 0.3s;
     overflow: hidden;
 }
