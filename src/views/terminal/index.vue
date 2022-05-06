@@ -4,20 +4,20 @@
             <main class="window-content" >
                 <template v-for="(line, key) in history">
                     <div :key="key" class="window-cursor" v-if="line.success">
-                        <span class="i-cursor-indicator">{{ line.success }}</span>
+                        <span class="i-cursor-indicator success">{{ line.success }}</span>
                     </div>
                     <div :key="key" class="window-cursor" v-else-if="line.error">
-                        <span class="i-cursor-indicator">{{ line.error }}</span>
+                        <span class="i-cursor-indicator error">{{ line.error }}</span>
                     </div>
                     <div :key="key"  class="window-cursor" v-else>
                         <span class="i-cursor-indicator">arif.mehniyar.com ></span>
-                        <span class="i-cursor-indicator" v-if="line.indicator">{{ line.indicator }}:</span>
+                        <span class="i-cursor-indicator title-indicator" v-if="line.indicator">{{ line.indicator }}:</span>
                         <input disabled  :type="line.inputMode" :inputmode="line.inputMode" :value="line.value" class="window-input js-prompt-input" />
                     </div>
                 </template>
                 <div class="window-cursor">
                     <span class="i-cursor-indicator">arif.mehniyar.com ></span>
-                    <span class="i-cursor-indicator" v-if="commandLine.indicator">{{ commandLine.indicator }}:</span>
+                    <span class="i-cursor-indicator title-indicator" v-if="commandLine.indicator">{{ commandLine.indicator }}:</span>
 
                     <textarea v-if="!commandLine.inputMode" autoresize ref="input" v-model.trim="commandLine.value" @keyup.enter="mouseEnter"  @keyup="typing"  class="window-input js-prompt-input"> </textarea>
                     <input v-else ref="input" v-model.trim="commandLine.value" @keyup.enter="mouseEnter"  @keyup="typing" :type="commandLine.inputMode" :inputmode="commandLine.inputMode" class="window-input js-prompt-input"/>
@@ -292,6 +292,16 @@ export default {
   opacity: .8;
   font-family: 'Consolas', monospace;
   margin: 0 2px 0 5px;
+
+  &.title-indicator{
+    color: #63a4fc;
+  }
+  &.success{
+    color: #3bfa94;
+  }
+  &.error{
+    color: #f57213;
+  }
 }
 .window-cursor .i-cursor-underscore {
   width: 10px;
@@ -325,6 +335,10 @@ export default {
   -webkit-user-select: none;
   caret-color: #fff;
   outline: none;
+  &:hover,
+  &:focus{
+    text-decoration: none !important;
+  }
 }
 textarea[autoresize] {
   display: block;
