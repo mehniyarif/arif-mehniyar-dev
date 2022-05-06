@@ -12,14 +12,14 @@
                     <div :key="key"  class="window-cursor" v-else>
                         <span class="i-cursor-indicator">arif.mehniyar.com ></span>
                         <span class="i-cursor-indicator" v-if="line.indicator">{{ line.indicator }}:</span>
-                        <span  class="window-input js-prompt-input" >{{line.value}}</span>
+                        <input disabled  :type="line.inputMode" :inputmode="line.inputMode" :value="line.value" class="window-input js-prompt-input" />
                     </div>
                 </template>
                 <div class="window-cursor">
                     <span class="i-cursor-indicator">arif.mehniyar.com ></span>
                     <span class="i-cursor-indicator" v-if="commandLine.indicator">{{ commandLine.indicator }}:</span>
 
-                    <textarea v-if="commandLine.inputMode" autoresize ref="input" v-model.trim="commandLine.value" @keyup.enter="mouseEnter"  @keyup="typing"  class="window-input js-prompt-input"> </textarea>
+                    <textarea v-if="!commandLine.inputMode" autoresize ref="input" v-model.trim="commandLine.value" @keyup.enter="mouseEnter"  @keyup="typing"  class="window-input js-prompt-input"> </textarea>
                     <input v-else ref="input" v-model.trim="commandLine.value" @keyup.enter="mouseEnter"  @keyup="typing" :type="commandLine.inputMode" :inputmode="commandLine.inputMode" class="window-input js-prompt-input"/>
                 </div>
             </main>
@@ -152,10 +152,10 @@ export default {
         },
         historyPush(obj){
             this.history.push({...obj, id:this.makeId()})
+            this.commandLine.value = null
             setTimeout(()=>{
-                this.commandLine.value = null
                 this.focus()
-            },100)
+            },0)
         },
         clearSets(){
             let newCommandSets = this.commandSets

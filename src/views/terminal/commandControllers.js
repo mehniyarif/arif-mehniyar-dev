@@ -2,6 +2,9 @@ export default {
     methods:{
         historyClear(){
             this.history = []
+            this.commandLine.value = null
+            this.commandLine.indicator = null
+            this.commandLine.setName = null
         },
         login(){
             this.commandLine = {
