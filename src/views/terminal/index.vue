@@ -131,6 +131,8 @@ export default {
                         this.clearSets()
                         this.historyPush({error:"Command Exist"})
                         this.commandLine.indicator = null
+                        this.commandLine.setName = null
+                        this.commandLine.inputMode = null
                     }
                     break;
 
@@ -183,7 +185,7 @@ export default {
             }else{
                 if(this.commandLine.value){
                     this.historyPush({
-                        error:`${this.commandLine.value} Not Found`
+                        error:`${this.commandLine.value} is not recognized command`
                     })
                 }
             }
