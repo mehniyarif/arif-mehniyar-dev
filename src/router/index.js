@@ -9,16 +9,15 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Main',
     component: MainLayout,
     children: [
           {
-            path: '/',
+            path: '',
             name: 'home',
             component: HomeView
           },
           {
-            path: '/about',
+            path: 'about',
             name: 'about',
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
@@ -26,37 +25,37 @@ const routes = [
             component: () => import(/* webpackChunkName: "about" */ '../views/about.vue')
           },
           {
-            path: '/npm-packages',
+            path: 'npm-packages',
             name: 'NPM Packages',
             component: () => import(/* webpackChunkName: "npm-packages" */ '../views/npm-packages.vue')
           },
           {
-            path: '/experiences',
+            path: 'experiences',
             name: 'Experiences',
             component: () => import(/* webpackChunkName: "experiences" */ '../views/experiences.vue')
           },
           {
-            path: '/django-experiences',
+            path: 'django-experiences',
             name: 'Django Experiences',
             component: () => import(/* webpackChunkName: "django-experiences" */ '../views/django-experiences.vue')
           },
           {
-            path: '/vue-experiences',
+            path: 'vue-experiences',
             name: 'Vue Experiences',
             component: () => import(/* webpackChunkName: "vue-experiences" */ '../views/vue-experiences.vue')
           },
           {
-            path: '/technologies',
+            path: 'technologies',
             name: 'Technologies',
             component: () => import(/* webpackChunkName: "technologies" */ '../views/technologies.vue')
           },
           {
-            path: '/tools',
+            path: 'tools',
             name: 'Tools',
             component: () => import(/* webpackChunkName: "tools" */ '../views/tools.vue')
           },
           {
-            path: '/work-areas',
+            path: 'work-areas',
             name: 'Areas I Want To Work',
             component: () => import(/* webpackChunkName: "work-areas" */ '../views/work-areas.vue')
           }
@@ -64,11 +63,10 @@ const routes = [
   },
   {
     path: '/terminal',
-    name: 'terminal',
     component: () => import(/* webpackChunkName: "terminal" */ '../layouts/terminal'),
     children: [
           {
-            path: '/',
+            path: '',
             name: 'console',
             component: () => import(/* webpackChunkName: "console" */ '../views/terminal')
           },
