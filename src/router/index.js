@@ -67,7 +67,7 @@ const routes = [
     children: [
           {
             path: '',
-            name: 'console',
+            name: 'terminal',
             component: () => import(/* webpackChunkName: "console" */ '../views/terminal')
           },
       ]
