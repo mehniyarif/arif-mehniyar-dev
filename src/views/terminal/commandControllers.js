@@ -1,3 +1,4 @@
+import {auth} from "@/firebase"
 export default {
     methods:{
         historyClear(){
@@ -28,24 +29,27 @@ export default {
             }
 
             if(this.commandSets.login.username.value && this.commandSets.login.password.value){
-                this.loginController()
+                this.loginFirebase()
             }
 
 
 
         },
-        loginController(){
-            if(this.commandSets.login.username.value && this.commandSets.login.password.value){
-                this.historyPush({
-                    success:`successfully login`
-                })
-                this.clearSets()
-            }else{
-                this.historyPush({
-                    error:`login failed`
-                })
-                this.clearSets()
-            }
+        loginFirebase() {
+            auth.signInWithEmailAndPassword(this.commandSets.login.username.value, this.commandSets.login.password.value)
+                    .then(data => {
+                        this.$store.dispatch('userUpdate', data)
+                        this.historyPush({
+                            success:`successfully login`
+                        })
+                        this.clearSets()
+                    })
+                    .catch(error => {
+                        this.historyPush({
+                            error:error
+                        })
+                        this.clearSets()
+                    });
         }
     }
 }

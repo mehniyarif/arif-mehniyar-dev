@@ -2,10 +2,22 @@ import Vue from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
+import {auth, firebaseApp} from "./firebase"
+import axios from "axios";
+import store from "@/store";
 
+Vue.prototype.$axios = axios;
 Vue.config.productionTip = false
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+let app;
+
+auth.onAuthStateChanged(user => {
+  if (!app) {
+    app = new Vue({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount('#app')
+  }
+});
+

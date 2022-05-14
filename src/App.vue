@@ -6,6 +6,11 @@
 
 <script>
 export default {
+    async created() {
+        document.addEventListener('visibilitychange', ()=>{
+            this.$store.dispatch('changePageVisibility', document.visibilityState)
+        })
+    },
 }
 </script>
 <style lang="scss">

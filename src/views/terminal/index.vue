@@ -201,7 +201,7 @@ export default {
     width: 450px;
     height: 100vh;
     padding-bottom: 70px;
-    background-color: rgba(37, 37, 37, 0.85);
+    background-color: #000;
     transition: all ease-in-out 0.3s;
     overflow: hidden;
 }
