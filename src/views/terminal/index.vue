@@ -121,6 +121,7 @@ export default {
                 case "ArrowDown":
                     if(!this.history || this.history?.length === 0) return
                     this.commandLine = this.translateHistory()[currentIndex +1] || this.history[0] || this.commandLine
+
                     break;
                 case "ArrowUp":
                     if(!this.history || this.history?.length === 0) return
@@ -178,7 +179,15 @@ export default {
                 let index = this.commands.findIndex(v => v === lastCommand)
                 let command = this.commandLine.setName || this.commandMethods[index]
                 setTimeout(()=>{
-                    this[command]()
+                    this.$store.dispatch('activeUser').then(user => {
+                        if(user || ['login','clear'].includes(command)){
+                            this[command]()
+                        }else{
+                            this.historyPush({
+                                success:`you must be login`
+                            })
+                        }
+                    })
                 },0)
 
                 this.historyPush(lastCommadLine)
@@ -201,6 +210,7 @@ export default {
     width: 450px;
     height: 100vh;
     padding-bottom: 70px;
+    padding-top: 30px;
     background-color: #000;
     transition: all ease-in-out 0.3s;
     overflow: hidden;

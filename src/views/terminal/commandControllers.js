@@ -43,32 +43,24 @@ export default {
                     })
                     .catch(error => {
                         this.historyPush({
-                            error:error
+                            error:"Password or Username is Wrong"
                         })
                         this.clearSets()
                     });
         },
         logout(){
-            this.$store.dispatch('activeUser').then(user => {
-                if(user){
-                    auth.signOut()
-                        .then(data => {
-                            this.$store.dispatch('logout')
-                            this.historyPush({
-                                success:`successfully log out`
-                            })
-                        })
-                        .catch(error => {
-                            this.historyPush({
-                                error:error
-                            })
-                        });
-                }else{
+            auth.signOut()
+                .then(data => {
+                    this.$store.dispatch('logout')
                     this.historyPush({
-                        success:`peki`
+                        success:`successfully log out`
                     })
-                }
-            })
+                })
+                .catch(error => {
+                    this.historyPush({
+                        error:error
+                    })
+                });
         },
     }
 }
