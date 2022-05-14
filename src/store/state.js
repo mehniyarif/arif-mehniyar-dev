@@ -10,8 +10,7 @@ const active_user_control = () => {
   if(JSON.parse(localStorage.getItem("userState"))){
     let myLocalStorage = JSON.parse(localStorage.getItem("userState"))
     for (const property of Object.keys(myLocalStorage)) {
-
-      if (defaultUser[property] != null) {
+      if(Object.keys(defaultUser).includes(property)){
         defaultUser[property] = myLocalStorage[property]
       }
     }

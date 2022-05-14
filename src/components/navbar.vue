@@ -112,10 +112,12 @@ export default {
         },
         goTerminal(){
             this.showNavbar = false
-            let h = screen.height;
-            let w = screen.width;
-            let routeData = this.$router.resolve({name: 'terminal'});
-            window.open(routeData.href, '_target', `toolbar=yes,scrollbars=no,resizable=yes,top=0,left=0,width=${w},height=${h}`);
+
+            this.$router.push('/terminal').catch(() => {})
+            // let h = screen.height;
+            // let w = screen.width;
+            // let routeData = this.$router.resolve({name: 'terminal'});
+            // window.open(routeData.href, '_target', `toolbar=yes,scrollbars=no,resizable=yes,top=0,left=0,width=${w},height=${h}`);
         },
         close(){
             this.showNavbar = false

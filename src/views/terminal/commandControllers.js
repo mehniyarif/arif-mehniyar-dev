@@ -7,6 +7,12 @@ export default {
             this.commandLine.indicator = null
             this.commandLine.setName = null
         },
+        exit(){
+            this.$router.push('/').catch(() => {})
+        },
+        english(){
+            this.$router.push('/english').catch(() => {})
+        },
         login(){
             this.commandLine = {
                 indicator:null,

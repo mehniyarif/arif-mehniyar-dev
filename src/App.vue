@@ -11,14 +11,7 @@ export default {
         document.addEventListener('visibilitychange', ()=>{
             this.$store.dispatch('changePageVisibility', document.visibilityState)
         })
-        this.getSecrets()
 
-    },
-    methods:{
-        async getSecrets() {
-            const token = await auth.currentUser.getIdToken();
-            console.log(token)
-        }
     }
 
 }

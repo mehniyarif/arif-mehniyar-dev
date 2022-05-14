@@ -40,8 +40,8 @@ export default {
             setName:null,
             value:null
           },
-          commands:["clear","login","logout"],
-          commandMethods:["historyClear","login", "logout"],
+          commands:["clear","login","logout","exit","english"],
+          commandMethods:["historyClear","login", "logout","exit","english"],
           commandSets: {
               login:{username:{indicator:"username", inputMode:"text", value:null},password:{indicator:"password", inputMode:"password", value:null}}
             }
@@ -180,7 +180,7 @@ export default {
                 let command = this.commandLine.setName || this.commandMethods[index]
                 setTimeout(()=>{
                     this.$store.dispatch('activeUser').then(user => {
-                        if(user || ['login','clear'].includes(command)){
+                        if(user || ['login','clear','exit'].includes(command)){
                             this[command]()
                         }else{
                             this.historyPush({
