@@ -6,6 +6,8 @@ import {auth, firebaseApp} from "./firebase"
 import axios from "axios";
 import store from "@/store";
 
+import './registerComponents.js' // Globally Registered Components
+
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false
 
