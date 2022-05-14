@@ -1,3 +1,5 @@
+import {auth} from "@/firebase";
+
 const actions = {
   changePageVisibility({ commit }, payload) {
     let status
@@ -6,6 +8,12 @@ const actions = {
   },
   userUpdate({ commit }, payload){
     commit('UPDATE_USER_INFO', payload)
+  },
+  activeUser() {
+    return auth.currentUser
+  },
+  logout({ commit }, payload){
+    commit('LOG_OUT', payload)
   }
 }
 

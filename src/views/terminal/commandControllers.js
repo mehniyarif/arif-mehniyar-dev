@@ -31,9 +31,6 @@ export default {
             if(this.commandSets.login.username.value && this.commandSets.login.password.value){
                 this.loginFirebase()
             }
-
-
-
         },
         loginFirebase() {
             auth.signInWithEmailAndPassword(this.commandSets.login.username.value, this.commandSets.login.password.value)
@@ -50,6 +47,28 @@ export default {
                         })
                         this.clearSets()
                     });
-        }
+        },
+        logout(){
+            this.$store.dispatch('activeUser').then(user => {
+                if(user){
+                    auth.signOut()
+                        .then(data => {
+                            this.$store.dispatch('logout')
+                            this.historyPush({
+                                success:`successfully log out`
+                            })
+                        })
+                        .catch(error => {
+                            this.historyPush({
+                                error:error
+                            })
+                        });
+                }else{
+                    this.historyPush({
+                        success:`peki`
+                    })
+                }
+            })
+        },
     }
 }

@@ -40,8 +40,8 @@ export default {
             setName:null,
             value:null
           },
-          commands:["clear","login"],
-          commandMethods:["historyClear","login"],
+          commands:["clear","login","logout"],
+          commandMethods:["historyClear","login", "logout"],
           commandSets: {
               login:{username:{indicator:"username", inputMode:"text", value:null},password:{indicator:"password", inputMode:"password", value:null}}
             }
