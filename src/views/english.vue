@@ -61,7 +61,6 @@ export default {
     .english-container{
       height: 100vh;
       width: 100%;
-      display: flex;
       position: relative;
       padding: 10px;
     }
@@ -73,10 +72,12 @@ export default {
     .word-container{
       position: absolute;
       left: 20%;
+      background-color: rgba(255, 255, 255, 0.9);
       width: 60%;
       top: 10%;
       height: 40%;
-      background-color: transparent;
+      padding: 20px;
+      border-radius: 5px;
       z-index: 2;
     }
 </style>

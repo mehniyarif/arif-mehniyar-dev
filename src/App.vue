@@ -20,6 +20,8 @@ export default {
 body{
   scrollbar-width: thin;
   scrollbar-color: #ccc;
+  width: 100vw;
+  overflow: auto;
 
   &::-webkit-scrollbar {
     width: 7px;
