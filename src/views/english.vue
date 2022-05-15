@@ -3,7 +3,7 @@
     <span class="word" v-for="(value,key) in words" :key="key">{{value.name}}</span>
         <div class="word-container">
             <efsane-form v-model="formData">
-                <input name="name" type="text" label="Word or Phrase"/>
+                <input name="name" type="text" :label="`${count+1}. Word or Phrase`"/>
                 <input name="mean" type="text" label="Mean"/>
                 <button label="Add" color="info" @click="addWordOrPhrase" :disabled="!formValidation"></button>
             </efsane-form>
@@ -23,6 +23,7 @@ export default {
                 mean:null,
                 is_learned:false
             },
+            count:0,
             words:[]
         }
     },
@@ -38,16 +39,16 @@ export default {
         addWordOrPhrase(){
             let collection = db.collection('words')
             collection.add(this.formData)
+            this.formData.mean = null
+            this.formData.name = null
             this.fetchWords()
-            setTimeout(()=>{
-                this.words = []
-            },100)
         },
         fetchWords(){
-            this.words = []
             let collection = db.collection('words')
             collection.onSnapshot((c)=>{
+                this.words = []
                 c.forEach((doc) => {
+                    this.count = c.docs.length
                     this.words.push(doc.data())
                 });
             })
@@ -62,10 +63,13 @@ export default {
       width: 100%;
       display: flex;
       position: relative;
-      .word:not(:last-child)::after{
-          content: ", ";
-      }
+      padding: 10px;
     }
+
+    .word:not(:nth-child(1))::before{
+      content: ", ";
+    }
+
     .word-container{
       position: absolute;
       left: 20%;
