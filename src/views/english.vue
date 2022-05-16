@@ -4,9 +4,10 @@
         <div class="word-container">
             <efsane-form v-model="formData">
                 <input name="name" type="text" :label="`${count+1}. Word or Phrase`"/>
-                <input name="mean" type="text" label="Mean"/>
+                <input name="mean" type="text" label="Mean" @keyup.enter="addWordOrPhrase"/>
                 <button label="Add" color="info" @click="addWordOrPhrase" :disabled="!formValidation"></button>
             </efsane-form>
+            <div class="error" v-show="existsError">{{existsError}}</div>
         </div>
 </div>
 </template>
@@ -24,7 +25,8 @@ export default {
                 is_learned:false
             },
             count:0,
-            words:[]
+            words:[],
+            existsError:null
         }
     },
     mounted() {
@@ -37,11 +39,22 @@ export default {
     },
     methods:{
         addWordOrPhrase(){
-            let collection = db.collection('words')
-            collection.add(this.formData)
-            this.formData.mean = null
-            this.formData.name = null
-            this.fetchWords()
+            if(!this.formData.mean || !this.formData.name) return
+            this.formData.name = this.formData.name.trim().toLowerCase()
+            db.collection("words").where('name', '==', this.formData.name).get().then(snapshot => {
+                if (snapshot.docs.length > 0){
+                    this.existsError = `${this.formData.name} is exists`
+                    setTimeout(()=>{
+                        this.existsError = null
+                    },2000)
+                }else{
+                    let collection = db.collection('words')
+                    collection.add(this.formData)
+                    this.formData.mean = null
+                    this.formData.name = null
+                    this.fetchWords()
+                }
+            });
         },
         fetchWords(){
             let collection = db.collection('words')
@@ -79,5 +92,8 @@ export default {
       padding: 20px;
       border-radius: 5px;
       z-index: 2;
+      .error{
+        color: #e32f2f;
+      }
     }
 </style>
