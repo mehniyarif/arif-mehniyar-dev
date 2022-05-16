@@ -1,9 +1,9 @@
 <template>
-  <label v-bind="efsaneInput" :for="elementId">
+  <label v-bind="efsaneInput" :for="efsaneAttrs.id || elementId">
     <span v-if="efsaneAttrs.label">{{efsaneAttrs.label}}
          <efsane-description-tooltip :tooltip="efsaneAttrs.description"></efsane-description-tooltip>
     </span>
-    <input :id="elementId" v-bind="inputAttrs" v-on="efsaneEvents" :value="value" @input="(e)=>{$emit('input',e.target.value)}">
+    <input :id="efsaneAttrs.id || elementId" v-bind="inputAttrs" v-on="efsaneEvents" :value="value" @input="(e)=>{$emit('input',e.target.value)}">
   </label>
 </template>
 
@@ -30,7 +30,7 @@ export default {
   computed:{
     inputAttrs(){
       let asArray = Object.entries(this.efsaneAttrs);
-      let acceptAttrs = ["accept", "alt", "checked", "dirname","disabled", "formaction", "formenctype", "formmethod", "formnovalidate", "formtarget", "height", "list", "max", "maxlength", "min", "minlength", "multiple", "name", "pattern", "placeholder", "readonly", "required", "size", "src", "step", "width", "type"]
+      let acceptAttrs = ["accept","id", "alt", "checked", "dirname","disabled", "formaction", "formenctype", "formmethod", "formnovalidate", "formtarget", "height", "list", "max", "maxlength", "min", "minlength", "multiple", "name", "pattern", "placeholder", "readonly", "required", "size", "src", "step", "width", "type"]
       let filtered = asArray.filter(([key, attr]) => acceptAttrs.includes(key))
       return Object.fromEntries(filtered)
     }

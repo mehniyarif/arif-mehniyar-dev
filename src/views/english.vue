@@ -3,7 +3,7 @@
     <span class="word" v-for="(value,key) in words" :key="key">{{value.name}}</span>
         <div class="word-container">
             <efsane-form v-model="formData">
-                <input name="name" type="text" :label="`${count+1}. Word or Phrase`"/>
+                <input id="word-value" name="name" type="text" :label="`${count+1}. Word or Phrase`"/>
                 <input name="mean" type="text" label="Mean" @keyup.enter="addWordOrPhrase"/>
                 <button label="Add" color="info" @click="addWordOrPhrase" :disabled="!formValidation"></button>
             </efsane-form>
@@ -41,6 +41,7 @@ export default {
         addWordOrPhrase(){
             if(!this.formData.mean || !this.formData.name) return
             this.formData.name = this.formData.name.trim().toLowerCase()
+            let is_phrase = this.formData.name.split(" ").length > 1
             db.collection("words").where('name', '==', this.formData.name).get().then(snapshot => {
                 if (snapshot.docs.length > 0){
                     this.existsError = `${this.formData.name} is exists`
@@ -49,9 +50,10 @@ export default {
                     },2000)
                 }else{
                     let collection = db.collection('words')
-                    collection.add(this.formData)
+                    collection.add({...this.formData, is_phrase})
                     this.formData.mean = null
                     this.formData.name = null
+                    document.getElementById('word-value').focus()
                     this.fetchWords()
                 }
             });
@@ -84,14 +86,21 @@ export default {
 
     .word-container{
       position: absolute;
-      left: 20%;
       background-color: rgba(255, 255, 255, 0.9);
-      width: 60%;
-      top: 10%;
+      left: 5%;
+      width: 80%;
+      top: 30%;
       height: 40%;
       padding: 20px;
       border-radius: 5px;
       z-index: 2;
+
+      @media (min-width: 768px) {
+        left: 20%;
+        width: 60%;
+        top: 10%;
+        height: 40%;
+      }
       .error{
         color: #e32f2f;
       }
