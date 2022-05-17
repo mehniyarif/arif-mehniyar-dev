@@ -58,12 +58,14 @@ export default {
                 }
             });
         },
-        fetchWords(){
+        async fetchWords(){
             let collection = db.collection('words')
-            collection.onSnapshot((c)=>{
+            const snapshot = await collection.get();
+            this.count = snapshot.size;
+
+            collection.limit(15).onSnapshot((c)=>{
                 this.words = []
                 c.forEach((doc) => {
-                    this.count = c.docs.length
                     this.words.push(doc.data())
                 });
             })
@@ -88,7 +90,7 @@ export default {
       position: absolute;
       background-color: rgba(255, 255, 255, 0.9);
       left: 5%;
-      width: 80%;
+      width: 90%;
       top: 30%;
       height: 40%;
       padding: 20px;
