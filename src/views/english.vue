@@ -4,7 +4,7 @@
         <div class="word-container">
             <efsane-form v-model="formData">
                 <input id="word-value" name="name" type="text" :label="`${count+1}. Word or Phrase`"/>
-                <input name="mean" type="text" label="Mean" @keyup.enter="addWordOrPhrase" placeholder="If you know, write.."/>
+                <input name="mean" type="text" label="Mean" @keyup.enter="addWordOrPhrase" placeholder="If you don't know, you must pass"/>
                 <button label="Add" color="info" @click="addWordOrPhrase" :disabled="!formValidation"></button>
             </efsane-form>
             <div class="error" v-show="existsError">{{existsError}}</div>
