@@ -4,7 +4,7 @@
         <div class="word-container">
             <efsane-form v-model="formData">
                 <input id="word-value" name="name" type="text" :label="`${count+1}. Word or Phrase`"/>
-                <input name="mean" type="text" label="Mean" @keyup.enter="addWordOrPhrase"/>
+                <input name="mean" type="text" label="Mean" @keyup.enter="addWordOrPhrase" placeholder="If you know, write.."/>
                 <button label="Add" color="info" @click="addWordOrPhrase" :disabled="!formValidation"></button>
             </efsane-form>
             <div class="error" v-show="existsError">{{existsError}}</div>
@@ -39,9 +39,10 @@ export default {
     },
     methods:{
         addWordOrPhrase(){
-            if(!this.formData.mean || !this.formData.name) return
+            if(!this.formData.name) return
             this.formData.name = this.formData.name.trim().toLowerCase()
             let is_phrase = this.formData.name.split(" ").length > 1
+            let will_learn = !this.formData.mean
             db.collection("words").where('name', '==', this.formData.name).get().then(snapshot => {
                 if (snapshot.docs.length > 0){
                     this.existsError = `${this.formData.name} is exists`
@@ -50,7 +51,7 @@ export default {
                     },2000)
                 }else{
                     let collection = db.collection('words')
-                    collection.add({...this.formData, is_phrase})
+                    collection.add({...this.formData, is_phrase, will_learn})
                     this.formData.mean = null
                     this.formData.name = null
                     document.getElementById('word-value').focus()
