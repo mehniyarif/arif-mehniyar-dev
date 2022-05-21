@@ -1,12 +1,16 @@
 <template>
   <div id="app">
+      <interactive-menu></interactive-menu>
       <router-view/>
   </div>
 </template>
 
 <script>
-import {auth, firebaseApp} from "./firebase"
+import InteractiveMenu from "@/components/interactive-menu";
 export default {
+    components: {
+        InteractiveMenu
+    },
     async created() {
         document.addEventListener('visibilitychange', ()=>{
             this.$store.dispatch('changePageVisibility', document.visibilityState)

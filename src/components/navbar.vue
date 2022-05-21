@@ -159,6 +159,12 @@ nav label {
   color: #4d5864;
 }
 
+#responsive-menu + *{
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
 /* Hamburger Icon */
 #menu-icon,
 #menu-icon:before,
