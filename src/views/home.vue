@@ -116,9 +116,9 @@ export default {
 .profile-picture{
     border-radius: 50%;
     text-align: center;
-    height: 17em;
-    width: 17em;
-    margin: 2px;
+    height: 15em;
+    width: 15em;
+    margin: 10px 2px 2px 2px;
     border: .2em solid #F7F9F9;
 
 
@@ -136,14 +136,23 @@ export default {
 .branches{
   margin: auto;
   img{
-    height: 2.5em;
+    height: 2.1em;
     cursor: pointer;
+
+    @media (min-width:768px){
+      height: 2.5em;
+    }
   }
 }
 .title-branches{
   text-align: center;
   padding-top: 10px;
   height: 1.8em;
+  font-size: .9em;
+
+  @media (min-width:768px){
+    font-size: 1.1em;
+  }
 }
 .resume{
   margin-top: 100px;

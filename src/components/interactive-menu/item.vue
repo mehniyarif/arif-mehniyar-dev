@@ -1,5 +1,5 @@
 <template>
-<div class="item-wrapper">
+<div class="item-wrapper" @click="item.pressed()">
     <figure>
         <img height="40" width="40" :src="item.image">
     </figure>
