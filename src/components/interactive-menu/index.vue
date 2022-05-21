@@ -19,7 +19,7 @@ export default {
         return{
             sliding:false,
             enterWrapper:false,
-            show:true,
+            show:false,
             moving:false,
             isLoggedIn:false,
             positions: {
@@ -47,6 +47,11 @@ export default {
             this.show = !!user
             this.isLoggedIn = !!user
         })
+        const el = document.querySelector('.interactive-menu-wrapper');
+        el.addEventListener('touchstart', this.mouseDown);
+        el.addEventListener('touchend', this.mouseUp);
+        el.addEventListener('touchcancel', this.mouseUp);
+        el.addEventListener('touchmove', this.mouseMove);
     },
     destroyed() {
         window.removeEventListener('mouseup', this.mouseUp)
