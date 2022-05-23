@@ -34,7 +34,12 @@ export default {
                 {
                     name:"Add Word Or Phrase",
                     image:"https://img.icons8.com/fluency/96/000000/add-tag.png",
-                    pressed:()=>{this.$router.push('/english').catch(() => {})}
+                    pressed:()=>{this.$router.push('/word-or-phrase').catch(() => {})}
+                },
+                {
+                    name:"Add Sentence",
+                    image:"https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-sentence-length-copywriting-flaticons-lineal-color-flat-icons.png",
+                    pressed:()=>{this.$router.push('/random-sentence').catch(() => {})}
                 }
             ]
         }

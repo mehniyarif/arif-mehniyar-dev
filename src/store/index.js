@@ -7,6 +7,8 @@ import getters from "./getters"
 import mutations from "./mutations"
 import actions from "./actions"
 
+import wordapi from "@/store/wordapi";
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -16,5 +18,7 @@ export default new Vuex.Store({
     mutations,
     state,
     actions,
-    modules: {}
+    modules: {
+        wordapi
+    }
 })

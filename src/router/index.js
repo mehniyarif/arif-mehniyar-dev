@@ -70,10 +70,16 @@ const routes = [
             component: () => import(/* webpackChunkName: "work-areas" */ '../views/work-areas.vue')
           },
           {
-            path: 'english',
-            name: 'English',
+            path: 'word-or-phrase',
+            name: 'Word or Phrase',
             meta: { requiresAuth: true },
-            component: () => import(/* webpackChunkName: "work-areas" */ '../views/english.vue')
+            component: () => import(/* webpackChunkName: "word-or-phrase" */ '../views/word-or-phrase.vue')
+          },
+          {
+            path: 'random-sentence',
+            name: 'Random Sentence',
+            meta: { requiresAuth: true },
+            component: () => import(/* webpackChunkName: "random-sentence" */ '../views/random-sentence.vue')
           }
       ]
   },

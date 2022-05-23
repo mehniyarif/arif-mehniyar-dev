@@ -11,7 +11,7 @@ export default {
             this.$router.push('/').catch(() => {})
         },
         english(){
-            this.$router.push('/english').catch(() => {})
+            this.$router.push('/word-or-phrase').catch(() => {})
         },
         login(){
             this.commandLine = {

@@ -1,7 +1,7 @@
 <template>
 <div class="item-wrapper" @click="item.pressed()">
     <figure>
-        <img height="40" width="40" :src="item.image">
+        <img height="35" width="35" :src="item.image">
     </figure>
 </div>
 </template>
@@ -25,7 +25,7 @@ export default {
       gap: 10px;
       border: 1px solid rgba(0,0,0,.1);
       border-radius: 15px;
-      margin: auto;
+      margin: auto auto 10px;
       cursor: pointer;
       &:hover{
         border: 1px solid rgba(0,0,0,.3);

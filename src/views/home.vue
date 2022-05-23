@@ -45,7 +45,7 @@
               I handle the api works of both my professional life and my own projects with django and usually use it with <b>rest framework</b> , <b>postgres</b>  and <b>redis</b>. I have a history of 2 years in total. I'm using and serving the django project with <b>docker</b>.
           </p>
           <p class="description-paragraph">
-              When necessary, I can connect to linux machine and write django queries to handle database operations. In addition to these I have used django and <b>django-rq</b>, <b>signals</b>, <b>exceptions</b>, <b>types</b>, <b>crons</b>, <b>views</b>, <b>serializers</b>, <b>urls</b>, <b>admin areas</b>, <b>models</b> a lot.
+              When necessary, I can connect to linux machine and write django queries to handle database operations. In addition to these I have used django and <b>django-rq</b>, <b>signals</b>, <b>exceptions</b>, <b>types</b>, <b>crons</b>, <b>views</b>, <b>serializers</b>, <b>urls</b>, <b>admin areas</b>, <b>channels</b>, <b>models</b> a lot.
           </p>
 
           <p class="description-paragraph next" id="javascript">
@@ -53,10 +53,10 @@
               Javascript is my comfort zone. I follow this technology up to date and try to use all it's API's as much as possible.  I have 4 years of work experince with this technology
           </p>
           <p class="description-paragraph">
-                I used many javascript api and features that came to my mind, such as <b>Intersection Observer</b> , <b>Mutation Observer</b>, <b>Drag Drop</b>, <b>Scroll View</b>, <b>Event Listeners</b>, <b>Mouse Events</b>, <b>Content Menu</b>, <b>Local Storage</b>, <b>Navigation</b>, <b>Clipboard</b>, <b>Web Components</b>
+                I used many javascript api and features that came to my mind, such as <b>Intersection Observer</b> , <b>Mutation Observer</b>, <b>Browser Notification</b>, <b>Drag Drop</b>, <b>Scroll View</b>, <b>Event Listeners</b>, <b>Touch Events</b>, <b>Websocket</b>, <b>Mouse Events</b>, <b>Content Menu</b>, <b>Local Storage</b>, <b>Navigation</b>, <b>Clipboard</b>, <b>Web Components</b>
           </p>
           <p class="description-paragraph">
-              While writing jabvascript codes, I pay attention to ES6 standards, especially object, array, string operations, I prefer <b>one liner</b> codes
+              While writing javascript codes, I pay attention to ES6 standards, especially object, array, string operations, I prefer <b>one liner</b> codes
           </p>
 
           <p class="description-paragraph next" id="python">
