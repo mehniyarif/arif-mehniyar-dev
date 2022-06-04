@@ -8,6 +8,7 @@ import mutations from "./mutations"
 import actions from "./actions"
 
 import wordapi from "@/store/wordapi";
+import xfEnglishApi from "@/store/xfEnglishApi";
 
 Vue.use(Vuex)
 
@@ -19,6 +20,7 @@ export default new Vuex.Store({
     state,
     actions,
     modules: {
-        wordapi
+        wordapi,
+        xfEnglishApi
     }
 })

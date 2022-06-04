@@ -6,7 +6,7 @@ const options = {
   params: {random: 'true'},
   headers: {
     'X-RapidAPI-Host': process.env.VUE_APP_RAPID_API_HOST,
-    'X-RapidAPI-Key': process.env.VUE_APP_RAPID_API_KEY
+    'X-RapidAPI-Key': process.env.VUE_APP_WORD_API_HOST
   }
 };
 export default {

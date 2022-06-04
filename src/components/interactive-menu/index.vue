@@ -40,6 +40,11 @@ export default {
                     name:"Add Sentence",
                     image:"https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-sentence-length-copywriting-flaticons-lineal-color-flat-icons.png",
                     pressed:()=>{this.$router.push('/random-sentence').catch(() => {})}
+                },
+                {
+                    name:"Sentence Working",
+                    image:"https://img.icons8.com/office/80/undefined/school.png",
+                    pressed:()=>{this.$router.push('/sentence-working').catch(() => {})}
                 }
             ]
         }

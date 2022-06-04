@@ -76,6 +76,12 @@ const routes = [
             component: () => import(/* webpackChunkName: "word-or-phrase" */ '../views/word-or-phrase.vue')
           },
           {
+            path: 'sentence-working',
+            name: 'Sentence Working',
+            meta: { requiresAuth: true },
+            component: () => import(/* webpackChunkName: "sentence-working" */ '../views/sentence-working.vue')
+          },
+          {
             path: 'random-sentence',
             name: 'Random Sentence',
             meta: { requiresAuth: true },
