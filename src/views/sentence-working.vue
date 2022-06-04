@@ -1,6 +1,11 @@
 <template>
-    <div>
-        {{word}}
+    <div class="sentences-working">
+        <efsane-form v-model="formData" class="form-container">
+            <input type="text" name="word" label="Word" @keyup.enter="fetchWordSentences"/>
+            <button label="Search" color="info" @click="fetchWordSentences" :disabled="!formValidation"></button>
+        </efsane-form>
+        <pre v-html="examples">
+        </pre>
     </div>
 </template>
 
@@ -11,20 +16,24 @@ export default {
     name: "english",
     data(){
         return{
-            word:null
+            formData:{
+                word:null,
+                test:null
+            },
+            examples:null
         }
-    },
-    mounted() {
-        this.fetchWordSentences("hello")
     },
     computed:{
         formValidation(){
+            return !!this.formData.word
         }
     },
     methods:{
-        async fetchWordSentences(word){
-            this.$store.dispatch('xfEnglishApi/fetchWordSentences', {word}).then((response)=>{
-                this.word = JSON.stringify(response, null, 2)
+        async fetchWordSentences(){
+            if(!this.formData.word) return
+
+            this.$store.dispatch('xfEnglishApi/fetchWordSentences', {word:this.formData.word.trim()}).then((response)=>{
+                this.examples = JSON.stringify(response, null, 2)
             })
         },
     }
@@ -32,36 +41,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .english-container{
+    .sentences-working{
       height: 100vh;
       width: 100%;
       position: relative;
       padding: 10px;
-    }
 
-    .word:not(:nth-child(1))::before{
-      content: ", ";
-    }
-
-    .word-container{
-      position: absolute;
-      background-color: rgba(255, 255, 255, 0.9);
-      left: 5%;
-      width: 90%;
-      top: 30%;
-      height: 40%;
-      padding: 20px;
-      border-radius: 5px;
-      z-index: 2;
-
-      @media (min-width: 768px) {
-        left: 20%;
-        width: 60%;
-        top: 10%;
-        height: 40%;
-      }
-      .error{
-        color: #e32f2f;
+      .form-container{
+        margin-top: 15px;
       }
     }
 </style>

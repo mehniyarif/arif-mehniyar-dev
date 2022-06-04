@@ -1,5 +1,5 @@
 <template>
-  <form :id="elementId" class="efsane-form" :style="styles">
+  <form :id="elementId" class="efsane-form" :style="styles" onsubmit="return false">
     <template v-for="(element, key) in efsaneElements">
       <!--      if fieldset-->
       <efsane-fieldset v-if="element.efsane.tag === 'fieldset'" :key="key" :fieldset-key="key + 1"
