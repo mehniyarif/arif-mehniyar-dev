@@ -79,6 +79,8 @@ export default {
     },
     methods:{
         async fetchWordSentences(){
+            this.pronunciations = []
+            this.definitions = []
             if(!this.formData.word) return
 
             this.$store.dispatch('xfEnglishApi/fetchWordSentences', {word:this.formData.word.trim()}).then((response)=>{
