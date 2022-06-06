@@ -7,8 +7,8 @@
                     <img height="28" width="28" src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/64/000000/external-refresh-arrows-dreamstale-lineal-dreamstale.png"/>
                 </figure>
             </div>
-            <div class="base-word">{{formData.base_word}}</div>
             <div class="sentence-type">{{formData.type}}</div>
+            <div class="base-word">{{formData.base_word}}</div>
             <efsane-form v-model="formData">
                 <input id="sentence-value" name="sentence" type="text" :label="`${count+1}. Sentence (${formData.status})`"/>
                 <button label="Add Sentence" color="info" @click="addSentence" :disabled="!formValidation"></button>
@@ -28,7 +28,7 @@ export default {
             formData:{
                 sentence:null,
                 base_word:"test",
-                type:null,
+                type:"",
                 status:"positive"
             },
             count:0,
@@ -55,9 +55,11 @@ export default {
             existsError:null
         }
     },
+    created() {
+        this.fetchSentenceTypes()
+    },
     mounted() {
         this.fetchSentences()
-        this.fetchSentenceTypes()
         this.fetchRandomWord()
     },
     computed:{
@@ -86,8 +88,12 @@ export default {
                     collection.add({...this.formData})
                     this.formData.sentence = null
                     document.getElementById('sentence-value').focus()
-                    this.fetchSentences()
-                    this.fetchRandomWord()
+                    queueMicrotask(()=>{
+                        this.fetchSentences()
+                    })
+                    queueMicrotask(()=>{
+                        this.fetchRandomWord()
+                    })
                 }
             });
         },
@@ -104,20 +110,26 @@ export default {
             })
         },
         async fetchRandomWord(){
-            this.randomStatus()
-            this.randomType()
             this.$store.dispatch('wordapi/fetchRandomWord').then((response)=>{
                 this.formData.base_word = response.word
             })
+            queueMicrotask(()=>{
+                this.randomType()
+            })
+            queueMicrotask(()=>{
+                this.randomStatus()
+            })
         },
         async fetchSentenceTypes(){
+
+            this.sentenceTypes = []
             let collection = db.collection('sentence_types')
 
-            collection.limit(15).onSnapshot((c)=>{
-                this.sentenceTypes = []
+            await collection.limit(15).onSnapshot((c)=>{
                 c.forEach((doc) => {
                     this.sentenceTypes.push(doc.data())
                 });
+                this.randomType()
             })
         }
     }
